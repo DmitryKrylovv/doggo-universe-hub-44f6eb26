@@ -13,7 +13,19 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Space Grotesk', 'sans-serif'],
+      },
       colors: {
+        dogza: {
+          purple: "hsl(var(--dogza-purple))",
+          "purple-light": "hsl(var(--dogza-purple-light))",
+          "purple-dark": "hsl(var(--dogza-purple-dark))",
+          black: "hsl(var(--dogza-black))",
+          white: "hsl(var(--dogza-white))",
+          gray: "hsl(var(--dogza-gray))",
+          "gray-dark": "hsl(var(--dogza-gray-dark))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
