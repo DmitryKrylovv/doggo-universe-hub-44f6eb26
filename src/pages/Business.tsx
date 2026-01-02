@@ -53,10 +53,10 @@ const Business = () => {
               новых клиентов среди владельцев собак.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 py-6">
+              <Button size="lg" className="text-lg px-8 py-6 bg-primary text-primary-foreground hover:bg-primary/90">
                 Стать партнёром
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-background/20 text-background hover:bg-background/10">
+              <Button size="lg" className="text-lg px-8 py-6 bg-white/10 border border-white/30 text-white hover:bg-white/20">
                 Связаться с нами
               </Button>
             </div>

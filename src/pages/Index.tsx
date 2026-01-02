@@ -2,9 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FeatureCard from "@/components/FeatureCard";
-import { Users, MapPin, Calendar, MessageCircle, Download, ArrowRight } from "lucide-react";
-import dogHero from "@/assets/dog-hero.png";
-import appMockup from "@/assets/app-mockup.png";
+import { Users, MapPin, Calendar, MessageCircle, Download, ArrowRight, Sparkles } from "lucide-react";
 
 const Index = () => {
   const features = [
@@ -34,43 +32,51 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 overflow-hidden">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-up">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-                Лучший друг для <span className="text-primary">вашего друга</span>
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-lg">
-                Dogza — приложение, которое делает жизнь с собакой ещё интереснее. 
-                Прогулки, друзья, места и умный помощник в одном месте.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 py-6">
-                  <Download className="mr-2 h-5 w-5" />
-                  Скачать бесплатно
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                  Узнать больше
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </div>
+      {/* Hero Section - Text Only */}
+      <section className="pt-40 pb-32 px-4">
+        <div className="container mx-auto text-center">
+          <div className="animate-fade-up max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-8">
+              <Sparkles className="w-4 h-4" />
+              Приложение #1 для собачников
             </div>
             
-            <div className="relative lg:h-[600px] flex items-center justify-center">
-              <div className="absolute -z-10 w-80 h-80 bg-primary/20 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-              <img 
-                src={appMockup} 
-                alt="Dogza App" 
-                className="w-72 md:w-80 animate-float drop-shadow-2xl"
-              />
-              <img 
-                src={dogHero} 
-                alt="Happy Dog" 
-                className="absolute -bottom-10 -left-10 w-40 md:w-48 animate-float"
-                style={{ animationDelay: "1s" }}
-              />
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] mb-8">
+              Лучший друг для{" "}
+              <span className="text-primary">вашего друга</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+              Dogza — приложение, которое делает жизнь с собакой ещё интереснее. 
+              Прогулки, друзья, места и умный помощник в одном месте.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="text-lg px-10 py-7">
+                <Download className="mr-2 h-5 w-5" />
+                Скачать бесплатно
+              </Button>
+              <Button variant="outline" size="lg" className="text-lg px-10 py-7">
+                Узнать больше
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+            
+            <div className="mt-16 flex items-center justify-center gap-8 text-muted-foreground">
+              <div className="text-center">
+                <p className="text-3xl font-bold text-foreground">50K+</p>
+                <p className="text-sm">Пользователей</p>
+              </div>
+              <div className="w-px h-12 bg-border" />
+              <div className="text-center">
+                <p className="text-3xl font-bold text-foreground">4.9</p>
+                <p className="text-sm">Рейтинг в App Store</p>
+              </div>
+              <div className="w-px h-12 bg-border" />
+              <div className="text-center">
+                <p className="text-3xl font-bold text-foreground">1000+</p>
+                <p className="text-sm">Мест на карте</p>
+              </div>
             </div>
           </div>
         </div>
