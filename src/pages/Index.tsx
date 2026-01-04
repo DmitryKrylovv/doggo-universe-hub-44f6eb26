@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FeatureCard from "@/components/FeatureCard";
+import FloatingEmojis from "@/components/FloatingEmojis";
 import { Users, MapPin, Calendar, MessageCircle, Download, ArrowRight, Sparkles } from "lucide-react";
 
 const Index = () => {
@@ -33,7 +34,8 @@ const Index = () => {
       <Header />
       
       {/* Hero Section - Text Only */}
-      <section className="pt-40 pb-32 px-4">
+      <section className="pt-40 pb-32 px-4 relative overflow-hidden">
+        <FloatingEmojis count={25} />
         <div className="container mx-auto text-center">
           <div className="animate-fade-up max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-8">
@@ -83,7 +85,8 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-4 bg-secondary/50">
+      <section id="features" className="py-20 px-4 bg-secondary/50 relative overflow-hidden">
+        <FloatingEmojis count={15} />
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
