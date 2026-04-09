@@ -108,6 +108,13 @@ const Header = () => {
               Главная
             </Link>
             <Link 
+              to="/users" 
+              className="text-sm font-medium py-2 text-foreground"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Пользователям
+            </Link>
+            <Link 
               to="/business" 
               className="text-sm font-medium py-2 text-foreground"
               onClick={() => setIsMenuOpen(false)}
