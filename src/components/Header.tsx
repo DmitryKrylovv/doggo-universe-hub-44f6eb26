@@ -10,7 +10,8 @@ const Header = () => {
   
   const isBusiness = location.pathname === "/business";
   const isAdoption = location.pathname === "/adoption";
-  const isDarkHero = isBusiness || isAdoption;
+  const isUsers = location.pathname === "/users";
+  const isDarkHero = isBusiness || isAdoption || isUsers;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +36,7 @@ const Header = () => {
         <Link to="/" className="flex items-center gap-2">
           <span className={`text-2xl font-bold ${textColor}`}>
             Dogza
+            {isUsers && <span className="text-primary ml-1">Users</span>}
             {isBusiness && <span className="text-primary ml-1">Business</span>}
             {isAdoption && <span className="text-primary ml-1">Adoption</span>}
           </span>
@@ -49,6 +51,14 @@ const Header = () => {
             }`}
           >
             Главная
+          </Link>
+          <Link 
+            to="/users" 
+            className={`text-sm font-medium transition-colors hover:text-primary ${
+              location.pathname === "/users" ? "text-primary" : mutedColor
+            }`}
+          >
+            Пользователям
           </Link>
           <Link 
             to="/business" 
@@ -96,6 +106,13 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Главная
+            </Link>
+            <Link 
+              to="/users" 
+              className="text-sm font-medium py-2 text-foreground"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Пользователям
             </Link>
             <Link 
               to="/business" 
