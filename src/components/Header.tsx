@@ -10,7 +10,8 @@ const Header = () => {
   
   const isBusiness = location.pathname === "/business";
   const isAdoption = location.pathname === "/adoption";
-  const isDarkHero = isBusiness || isAdoption;
+  const isUsers = location.pathname === "/users";
+  const isDarkHero = isBusiness || isAdoption || isUsers;
 
   useEffect(() => {
     const handleScroll = () => {
