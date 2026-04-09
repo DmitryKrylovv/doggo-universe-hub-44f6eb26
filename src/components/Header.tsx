@@ -53,6 +53,14 @@ const Header = () => {
             Главная
           </Link>
           <Link 
+            to="/users" 
+            className={`text-sm font-medium transition-colors hover:text-primary ${
+              location.pathname === "/users" ? "text-primary" : mutedColor
+            }`}
+          >
+            Пользователям
+          </Link>
+          <Link 
             to="/business" 
             className={`text-sm font-medium transition-colors hover:text-primary ${
               location.pathname === "/business" ? "text-primary" : mutedColor
