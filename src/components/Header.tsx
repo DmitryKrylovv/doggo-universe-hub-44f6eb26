@@ -36,7 +36,7 @@ const Header = () => {
         <Link to="/" className="flex items-center gap-2">
           <span className={`text-2xl font-bold ${textColor}`}>
             Dogza
-            {isUsers && <span className="text-primary ml-1">Users</span>}
+            
             {isBusiness && <span className="text-primary ml-1">Business</span>}
             {isAdoption && <span className="text-primary ml-1">Adoption</span>}
           </span>
