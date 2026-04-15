@@ -33,51 +33,54 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section - Text Only */}
-      <section className="pt-40 pb-32 px-4 relative overflow-hidden">
+      {/* Hero Section */}
+      <section className="pt-44 pb-32 px-4 relative overflow-hidden">
         <FloatingEmojis count={25} />
-        <div className="container mx-auto text-center">
-          <div className="animate-fade-up max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-8">
-              <Sparkles className="w-4 h-4" />
+        {/* Soft gradient blob */}
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="container mx-auto text-center relative z-10">
+          <div className="animate-fade-up max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 bg-primary/8 text-primary px-4 py-2 rounded-full text-xs font-semibold mb-8 border border-primary/15">
+              <Sparkles className="w-3.5 h-3.5" />
               Приложение #1 для собачников
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] mb-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-[1.05] mb-8 tracking-tight">
               Лучший друг для{" "}
-              <span className="text-primary">вашего друга</span>
+              <span className="gradient-text">вашего друга</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-xl mx-auto leading-relaxed">
               Dogza — приложение, которое делает жизнь с собакой ещё интереснее. 
-              Прогулки, друзья, места и умный помощник в одном месте.
+              Прогулки, друзья, места и умный помощник.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-10 py-7">
-                <Download className="mr-2 h-5 w-5" />
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button size="lg" className="text-base px-8 py-6">
+                <Download className="mr-2 h-4 w-4" />
                 Скачать бесплатно
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-10 py-7">
+              <Button variant="outline" size="lg" className="text-base px-8 py-6">
                 Узнать больше
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
             
-            <div className="mt-16 flex items-center justify-center gap-8 text-muted-foreground">
+            <div className="mt-20 flex items-center justify-center gap-10 text-muted-foreground">
               <div className="text-center">
-                <p className="text-3xl font-bold text-foreground">50K+</p>
-                <p className="text-sm">Пользователей</p>
+                <p className="text-2xl font-bold text-foreground">50K+</p>
+                <p className="text-xs mt-1">Пользователей</p>
               </div>
-              <div className="w-px h-12 bg-border" />
+              <div className="w-px h-10 bg-border" />
               <div className="text-center">
-                <p className="text-3xl font-bold text-foreground">4.9</p>
-                <p className="text-sm">Рейтинг в App Store</p>
+                <p className="text-2xl font-bold text-foreground">4.9</p>
+                <p className="text-xs mt-1">Рейтинг</p>
               </div>
-              <div className="w-px h-12 bg-border" />
+              <div className="w-px h-10 bg-border" />
               <div className="text-center">
-                <p className="text-3xl font-bold text-foreground">1000+</p>
-                <p className="text-sm">Мест на карте</p>
+                <p className="text-2xl font-bold text-foreground">1000+</p>
+                <p className="text-xs mt-1">Мест на карте</p>
               </div>
             </div>
           </div>
@@ -85,18 +88,18 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-4 bg-secondary/50 relative overflow-hidden">
+      <section id="features" className="py-24 px-4 relative overflow-hidden">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
               Всё для вас и вашей собаки
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-lg mx-auto">
               Функции, которые превращают каждый день с питомцем в приключение
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {features.map((feature, index) => (
               <FeatureCard 
                 key={feature.title}
@@ -111,48 +114,48 @@ const Index = () => {
       </section>
 
       {/* AI Section */}
-      <section className="py-20 px-4">
+      <section className="py-24 px-4">
         <div className="container mx-auto">
           <div className="bg-foreground text-background rounded-3xl p-12 md:p-16 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
             
             <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
-                  <MessageCircle className="w-4 h-4" />
+                <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-semibold mb-6">
+                  <MessageCircle className="w-3.5 h-3.5" />
                   ИИ-помощник
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
                   Спросите что угодно о собаках
                 </h2>
-                <p className="text-background/70 text-lg mb-8">
+                <p className="text-background/60 text-base mb-8 leading-relaxed">
                   Наш ИИ-агент знает всё о здоровье, питании, поведении и уходе за собаками. 
                   Получайте персональные рекомендации 24/7.
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2">
                   {["Чем кормить щенка?", "Как отучить лаять?", "Симптомы болезни"].map((q) => (
-                    <span key={q} className="bg-background/10 px-4 py-2 rounded-full text-sm">
+                    <span key={q} className="bg-background/10 px-3 py-1.5 rounded-full text-xs font-medium">
                       {q}
                     </span>
                   ))}
                 </div>
               </div>
               
-              <div className="bg-background/10 backdrop-blur-sm rounded-2xl p-6 border border-background/20">
+              <div className="bg-background/10 backdrop-blur-sm rounded-2xl p-6 border border-background/10">
                 <div className="flex items-center gap-3 mb-4 pb-4 border-b border-background/10">
-                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                    <MessageCircle className="w-5 h-5" />
+                  <div className="w-9 h-9 bg-primary rounded-full flex items-center justify-center">
+                    <MessageCircle className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="font-medium">Dogza ИИ</p>
-                    <p className="text-xs text-background/50">Всегда онлайн</p>
+                    <p className="font-semibold text-sm">Dogza ИИ</p>
+                    <p className="text-xs text-background/40">Всегда онлайн</p>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <div className="bg-background/10 rounded-lg p-3 text-sm max-w-[80%]">
+                <div className="space-y-3">
+                  <div className="bg-background/10 rounded-xl p-3 text-sm max-w-[80%]">
                     Моя собака не хочет есть сухой корм. Что делать?
                   </div>
-                  <div className="bg-primary rounded-lg p-3 text-sm ml-auto max-w-[80%]">
+                  <div className="bg-primary rounded-xl p-3 text-sm ml-auto max-w-[80%]">
                     Это частая проблема! Попробуйте размочить корм тёплой водой или добавить немного влажного корма...
                   </div>
                 </div>
@@ -163,21 +166,21 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-primary/5">
+      <section className="py-24 px-4">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 tracking-tight">
             Готовы начать?
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
+          <p className="text-muted-foreground mb-10 max-w-md mx-auto">
             Скачайте Dogza бесплатно и присоединяйтесь к сообществу счастливых собачников
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6">
-              <Download className="mr-2 h-5 w-5" />
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button size="lg" className="text-base px-8 py-6">
+              <Download className="mr-2 h-4 w-4" />
               App Store
             </Button>
-            <Button size="lg" className="text-lg px-8 py-6">
-              <Download className="mr-2 h-5 w-5" />
+            <Button size="lg" className="text-base px-8 py-6">
+              <Download className="mr-2 h-4 w-4" />
               Google Play
             </Button>
           </div>
