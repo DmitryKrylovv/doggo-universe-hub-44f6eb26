@@ -23,10 +23,10 @@ const Header = () => {
   }, []);
 
   const headerBg = scrolled 
-    ? "bg-background/95 backdrop-blur-md border-b border-border" 
+    ? "bg-background/80 backdrop-blur-xl shadow-sm" 
     : isDarkHero 
       ? "bg-transparent" 
-      : "bg-background/80 backdrop-blur-md";
+      : "bg-transparent";
 
   const textColor = scrolled || !isDarkHero ? "text-foreground" : "text-white";
   const mutedColor = scrolled || !isDarkHero ? "text-muted-foreground" : "text-white/70";
@@ -40,10 +40,10 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}>
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <span className={`text-2xl font-bold ${textColor}`}>
+          <span className={`text-xl font-bold tracking-tight ${textColor}`}>
             Dogza
             {isBusiness && <span className="text-primary ml-1">Business</span>}
             {isAdoption && <span className="text-primary ml-1">Adoption</span>}
@@ -52,13 +52,15 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === link.to ? "text-primary" : mutedColor
+              className={`text-sm font-medium px-3 py-2 rounded-full transition-all duration-200 ${
+                location.pathname === link.to 
+                  ? "text-primary bg-primary/10" 
+                  : `${mutedColor} hover:text-foreground hover:bg-foreground/5`
               }`}
             >
               {link.label}
@@ -66,8 +68,12 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <Button variant={scrolled || !isDarkHero ? "outline" : "ghost"} size="sm" className={!scrolled && isDarkHero ? "border-white/30 text-white hover:bg-white/10" : ""}>
+        <div className="hidden md:flex items-center gap-3">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className={!scrolled && isDarkHero ? "text-white hover:bg-white/10" : ""}
+          >
             Войти
           </Button>
           <Button size="sm">
@@ -77,7 +83,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className={`md:hidden p-2 ${textColor}`}
+          className={`md:hidden p-2 rounded-full transition-colors ${textColor} hover:bg-foreground/5`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,20 +92,24 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background border-b border-border animate-fade-in">
-          <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-background/95 backdrop-blur-xl animate-fade-in">
+          <nav className="container mx-auto px-4 py-6 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className="text-sm font-medium py-2 text-foreground"
+                className={`text-sm font-medium py-3 px-4 rounded-xl transition-colors ${
+                  location.pathname === link.to 
+                    ? "text-primary bg-primary/10" 
+                    : "text-foreground hover:bg-foreground/5"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="flex flex-col gap-2 pt-4 border-t border-border">
-              <Button variant="outline" size="sm">
+            <div className="flex flex-col gap-2 pt-4 mt-4 border-t border-border">
+              <Button variant="ghost" size="sm">
                 Войти
               </Button>
               <Button size="sm">
