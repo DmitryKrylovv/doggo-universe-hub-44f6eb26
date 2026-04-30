@@ -13,9 +13,9 @@ const Feed = () => {
   );
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="px-4 pt-1">
-        <h1 className="text-2xl font-extrabold tracking-tight">Привет, Аня 👋</h1>
+    <div className="flex flex-col gap-4 lg:gap-5">
+      <div className="px-4 pt-1 lg:px-0 lg:pt-0">
+        <h1 className="text-2xl font-extrabold tracking-tight lg:text-3xl">Привет, Аня 👋</h1>
         <p className="text-sm text-muted-foreground">
           Сегодня в Москве хорошо для прогулки — +4°, без осадков.
         </p>
@@ -24,7 +24,7 @@ const Feed = () => {
       <Stories />
       <FeedFilters active={active} onChange={setActive} />
 
-      <div className="flex flex-col gap-5 px-4">
+      <div className="flex flex-col gap-5 px-4 lg:px-0">
         {visible.map((post) => (
           <PostCard key={post.id} post={post} />
         ))}
