@@ -9,6 +9,9 @@ import Adoption from "./pages/Adoption";
 import UsersPage from "./pages/Users";
 import Partners from "./pages/Partners";
 import NotFound from "./pages/NotFound";
+import AppLayout from "./app/components/AppLayout";
+import Feed from "./app/pages/Feed";
+import Placeholder from "./app/pages/Placeholder";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +27,17 @@ const App = () => (
           <Route path="/business" element={<Business />} />
           <Route path="/adoption" element={<Adoption />} />
           <Route path="/partners" element={<Partners />} />
+
+          {/* Mobile app */}
+          <Route path="/app" element={<AppLayout />}>
+            <Route index element={<Feed />} />
+            <Route path="feed" element={<Feed />} />
+            <Route path="explore" element={<Placeholder title="Карта" hint="Догфрендли места, парки и встречи рядом." />} />
+            <Route path="walks" element={<Placeholder title="Прогулки" hint="Создавайте и присоединяйтесь к встречам." />} />
+            <Route path="messages" element={<Placeholder title="Сообщения" hint="Личные чаты и сообщества по породам." />} />
+            <Route path="profile" element={<Placeholder title="Профиль" hint="Ваши собаки, достижения и сохранённое." />} />
+          </Route>
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
