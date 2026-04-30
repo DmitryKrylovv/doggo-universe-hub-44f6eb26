@@ -45,6 +45,12 @@
     --dogza-gray: 240 5% 96%;
     --dogza-gray-dark: 240 5% 20%;
 
+    /* Dogza App (mobile product) tokens — premium purple, deep contrast */
+    --app-bg: 260 30% 98%;
+    --app-surface: 0 0% 100%;
+    --app-surface-hover: 260 30% 96%;
+    --app-border: 260 20% 92%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
