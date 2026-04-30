@@ -8,8 +8,8 @@ interface Props {
 
 const FeedFilters = ({ active, onChange }: Props) => {
   return (
-    <div className="sticky top-[60px] z-20 -mt-1 bg-app-bg/80 px-4 py-3 backdrop-blur-xl">
-      <div className="-mx-4 flex gap-2 overflow-x-auto px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <div className="sticky top-[60px] z-20 -mt-1 bg-app-bg/80 px-4 py-3 backdrop-blur-xl lg:top-0 lg:px-0">
+      <div className="-mx-4 flex gap-2 overflow-x-auto px-4 lg:mx-0 lg:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {filters.map((f) => {
           const isActive = active === f.id;
           return (
